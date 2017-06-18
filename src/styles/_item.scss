@@ -1,0 +1,120 @@
+.item {
+  display: flex;
+  flex-direction: row;
+  min-height: 258px;
+  margin-top: 39px;
+  border-bottom: 1px solid #ececec;
+
+  .image-container {
+    flex: 0 0 131px;
+    margin-left: 27px;
+    height: 131px;
+    border-radius: 10px;
+    box-shadow: 0 11px 20px 0 rgba(0, 0, 0, 0.08);
+    .image {
+      margin: 22px 23px;
+      width: 86px;
+      height: 86px;
+      border-radius: 8px;
+      background: url('../images/no-image.jpg') no-repeat;
+    }
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+
+  .data-container {
+    display: flex;
+    margin-left: 38px;
+    margin-right: 46px;
+    height: 218px;
+    flex-direction: column;
+    border-right: 1px solid #ececec;
+    flex: 0 1 504px;
+
+    .title {
+      flex: 1;
+      color: $grey_font_color;
+      font-size: 20px;
+      height: 20px;
+      font-weight: 600;
+      letter-spacing: 0;
+      text-overflow: ellipsis;
+      overflow: hidden;
+    }
+    .description {
+      flex: 1;
+      margin: 8px 0 0 0;
+      font-size: 16px;
+      line-height: 25px;
+    }
+  }
+
+  .quantity {
+    flex: 0 1 164px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    text-align: center;
+    height: 191px;
+    align-items: center;
+
+    .item-btn {
+      flex: 0 0 39px;
+      align-self: center;
+      height: 39px;
+      border-radius: 2px;
+      border: solid 1px #dcdcdc;
+      cursor: pointer;
+      color: #4d4d4d;
+      display: flex;
+      align-items: center;
+
+      &.disabled {
+        cursor: not-allowed;
+        opacity: 0.5;
+        color: #aeaeae;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+      .sign {
+        flex: 1;
+      }
+    }
+    .count {
+      flex: 0 0 59px;
+      align-self: center;
+      color: #7d7d7d;
+    }
+  }
+
+  .item-right-block {
+    display: flex;
+    flex-direction: column;
+    margin-right: 90px;
+    align-items: flex-end;
+    width: 104px;
+
+    .trash-btn {
+      flex: 0 0 80px;
+      width: 20px;
+      background: url('../images/trash-bin.png') no-repeat;
+      &:hover {
+        opacity: 0.8;
+        cursor: pointer;
+      }
+    }
+
+    .price {
+      flex: 0 0 80px;
+      height: 40px;
+      font-size: 20px;
+      font-weight: bold;
+      line-height: 2;
+      color: #000000;
+      text-align: right;
+      white-space: nowrap;
+    }
+  }
+}

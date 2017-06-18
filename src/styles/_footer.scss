@@ -1,0 +1,22 @@
+.footer {
+  height: 686px;
+  flex: 0 1 100%;
+  background: url('../images/adyax-world.png') no-repeat center center #000000;
+
+  .resume {
+    color: #ffffff;
+    line-height: 52px;
+    font-size: 40px;
+    letter-spacing: 0;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.50);
+    text-align: center;
+    width: 709px;
+    margin: 0 auto;
+    padding-top: 222px;
+  }
+}
+
+.bottom-white-block {
+  flex: 1;
+  height: 70px;
+}

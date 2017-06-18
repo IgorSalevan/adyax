@@ -1,0 +1,47 @@
+.header {
+  min-height: 691px;
+  flex: 1;
+  position: relative;
+  color: $grey_font_color;
+  align-content: center;
+  text-align: center;
+  .logo {
+    display: block;
+    .image {
+      margin-top: 53px;
+      height: 60px;
+      background: url("../images/adyax-logo.svg") no-repeat center top;
+    }
+    .slogan {
+      margin-top: 21px;
+      font-size: 12px;
+      line-height: 15px;
+      letter-spacing: 5.6px;
+      text-transform: uppercase;
+    }
+  }
+  .title {
+    margin: 65px auto 0;
+    display: block;
+    text-align: center;
+    height: 67px;
+    font-family: 'Titillium Web', sans-serif;
+    font-size: 60px;
+    font-weight: 900;
+    letter-spacing: 0.8px;
+    span {
+      color: #fdd81d;
+    }
+  }
+  .annonce {
+    margin: 53px auto 0;
+    display: block;
+    text-align: center;
+    line-height: 43px;
+    font-size: 24px;
+    font-weight: 600;
+    width: 770px;
+    height: 169px;
+  }
+}
+
