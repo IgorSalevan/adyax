@@ -1,4 +1,4 @@
-const API_URL = 'http://5945835acf46400011a812ab.mockapi.io/api/v1/items';
+const API_URL = 'https://5945835acf46400011a812ab.mockapi.io/api/v1/items';
 
 export const FETCH_ITEMS_SUCCESS = 'FETCH_ITEMS_SUCCESS';
 export const FETCH_ITEMS_FAILED = 'FETCH_ITEMS_FAILED';
