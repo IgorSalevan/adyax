@@ -1,6 +1,4 @@
 .yellow-container {
-  flex: 1;
-  min-height: 282px;
   background: #FEDD23;
 }
 
@@ -34,7 +32,7 @@
     }
   }
 
-  .items-api-error {
+  .items-alert {
     text-align: center;
     margin: auto 0;
     padding: 100px 0;

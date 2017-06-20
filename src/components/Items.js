@@ -3,6 +3,7 @@ import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 import Item from '../components/Item';
 import { getItems, changeSku, changeCount, removeItem } from '../actions/items';
+import { texts } from '../data';
 
 class Items extends Component {
 
@@ -28,6 +29,14 @@ class Items extends Component {
     const { items: storeData, itemActions: { changeSku, changeCount, removeItem } } = this.props;
     const items = storeData.get('items');
     const failed = storeData.get('failed');
+    let alert;
+    if (failed) {
+      alert = texts.apiError;
+    }
+    if (!items.size) {
+      alert = texts.noItems;
+    }
+
     return (
       <div className="yellow-container">
         <div className="white-container">
@@ -48,8 +57,8 @@ class Items extends Component {
               <div className="value">{ this.calculateTotalPrice(items) }</div>
             </div>
           }
-          {failed &&
-            <div className="items-api-error">Failed loading items data :(<br />Please, try again later</div>
+          {alert &&
+            <div className="items-alert">{ alert }</div>
           }
         </div>
       </div>
