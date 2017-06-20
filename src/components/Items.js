@@ -27,11 +27,12 @@ class Items extends Component {
   render() {
     const { items: storeData, itemActions: { changeSku, changeCount, removeItem } } = this.props;
     const items = storeData.get('items');
+    const failed = storeData.get('failed');
     return (
       <div className="yellow-container">
         <div className="white-container">
           {items.size > 0 &&
-            <div className="items-container">
+          <div className="items-container">
               {items.map((item, key) =>
                 <Item key={ key }
                   onChangeSku={ changeSku }
@@ -40,12 +41,15 @@ class Items extends Component {
                   {...item.toJS()}
                 />).toJS()
               }
-            </div>
+          </div>
           }
           {items.size > 0 &&
             <div className="total-price-container">
               <div className="value">{ this.calculateTotalPrice(items) }</div>
             </div>
+          }
+          {failed &&
+            <div className="items-api-error">Failed loading items data :(<br />Please, try again later</div>
           }
         </div>
       </div>

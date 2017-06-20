@@ -15,7 +15,7 @@ export const getItems = () => {
       const json = await result.json();
       dispatch({type: FETCH_ITEMS_SUCCESS, payload: json});
     } catch (e) {
-      dispatch({type: FETCH_ITEMS_FAILED});
+      dispatch({type: FETCH_ITEMS_FAILED, e});
     }
   }
 };
