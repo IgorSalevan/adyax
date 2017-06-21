@@ -29,12 +29,9 @@ class Items extends Component {
     const { items: storeData, itemActions: { changeSku, changeCount, removeItem } } = this.props;
     const items = storeData.get('items');
     const failed = storeData.get('failed');
-    let alert;
+    let alert = '';
     if (failed) {
       alert = texts.apiError;
-    }
-    if (!items.size) {
-      alert = texts.noItems;
     }
 
     return (
