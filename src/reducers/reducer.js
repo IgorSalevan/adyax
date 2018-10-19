@@ -13,33 +13,31 @@ const initialState = fromJS({
 });
 
 export default function reducer(state = initialState, action) {
-  let newState = state;
-  let itemIndex = null;
-
   switch (action.type) {
     case FETCH_ITEMS_SUCCESS:
-      newState = newState.set('items', fromJS(action.payload));
-      break;
+      return state.set('items', fromJS(action.payload));
     case FETCH_ITEMS_FAILED:
-      newState = newState.set('failed', true);
-      break;
-    case ITEMS_CHANGE_SKU:
+      return state.set('failed', true);
+    case ITEMS_CHANGE_SKU: {
       const { itemId, skuKey, itemsCount } = action;
-      itemIndex = newState.get('items').findKey(item => item.get('id') === itemId);
-      newState = newState
+      const itemIndex = state.get('items').findKey(item => item.get('id') === itemId);
+
+      return state
         .setIn(['items', itemIndex, 'active'], skuKey)
         .setIn(['items', itemIndex, 'count'], itemsCount);
-      break;
-    case ITEMS_CHANGE_COUNT:
-      const {itemId: id, count } = action;
-      itemIndex = newState.get('items').findKey(item => item.get('id') === id);
-      newState = newState.setIn(['items', itemIndex, 'count'], count);
-      break;
-    case ITEM_REMOVE:
-      itemIndex = newState.get('items').findKey(item => item.get('id') === action.itemId);
-      newState = newState.removeIn(['items', itemIndex]);
-      break;
-    default: {}
+    }
+    case ITEMS_CHANGE_COUNT: {
+      const { itemId: id, count } = action;
+      const itemIndex = state.get('items').findKey(item => item.get('id') === id);
+
+      return state.setIn(['items', itemIndex, 'count'], count);
+    }
+    case ITEM_REMOVE: {
+      const itemIndex = state.get('items').findKey(item => item.get('id') === action.itemId);
+
+      return state.removeIn(['items', itemIndex]);
+    }
+    default:
+      return state;
   }
-  return newState;
 }
