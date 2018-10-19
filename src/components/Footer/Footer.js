@@ -1,5 +1,5 @@
 import React from 'react';
-import { texts } from '../data';
+import { texts } from '../../data';
 
 const Footer = () => {
   return (

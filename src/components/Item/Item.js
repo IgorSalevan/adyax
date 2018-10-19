@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import SkuDropdown from '../components/SkuDropdown';
+import SkuDropdown from '../SkuDropdown/SkuDropdown';
 import PropType from 'prop-types';
 
 class Item extends Component {
